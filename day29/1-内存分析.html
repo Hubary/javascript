@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var theThing = null;
+			var replaceThing = function() {
+				console.log(11)
+				var priorThing = theThing;
+				var unused = function() {
+					if(priorThing) {
+						console.log("hi");
+					}
+				};
+				theThing = {
+					longStr: new Array(1000000).join('*'),
+
+					someMethod: function() {
+						console.log('aaa');
+					}
+				};
+			};
+			setInterval(replaceThing, 1000);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input type="text" name="" id="" value="" class="ipt" />
+		<ul class="list">
+
+		</ul>
+	</body>
+
+	<script type="text/javascript">
+		var ipt = document.querySelector('.ipt');
+		ipt.oninput = function() {
+			console.log(this.value);
+			var sc = document.createElement('script');
+
+			var search = this.value;
+			var url = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' +
+				search +
+				'&json=1&p=3&sid=24454_1439_21108_24879_20928&req=2&csor=1&cb=callback&_=1509434745108'
+
+			sc.src = url;
+			document.body.appendChild(sc);
+			document.body.removeChild(sc)
+			
+			
+		}
+		
+		function callback(res){
+				console.log(res);
+				//处理数据
+				
+				var arr =  res.s.map(function(value,index){
+					if(index >=4){
+						return '';
+					}
+					return `<li>${value}</li>`;
+				});
+				console.log(arr);
+				var html = arr.join('');			
+				var list = document.querySelector('.list');
+				list.innerHTML = html;
+		}
+	</script>
+
+</html>

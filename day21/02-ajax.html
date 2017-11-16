@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<input type="text" name="" id="ipt" value="" />
+
+		<script type="text/javascript">
+			var ipt = document.getElementById('ipt');
+			ipt.oninput = function() {
+				console.log(ipt.value);
+				var xhr = new XMLHttpRequest();
+
+				//打开跟服务器的连接
+				// 1请求的方法 get  post
+				//2 请求的地址或者接口 （api）    ，  搜索接口  
+
+				// 为API而生，为框架死，为debug而奋斗一辈子，吃了符号的亏，上了大小写的当，之后死在了需求上
+
+				var keyword = ipt.value;
+
+				var url = 'http://www.lefeng.com/api/neptune/search/suggestion/v2?keyword=' + keyword + '&warehouse=VIP_BJ&notOauth=1'
+
+				xhr.open('GET', url, true);
+
+				//发送数据
+				xhr.send(null);
+
+				//接收服务器返回的数据
+				xhr.onreadystatechange = function() {
+					console.log(xhr.readyState);
+					if(xhr.readyState == 4 && xhr.status == 200) {
+						//数据接收完毕
+						console.log(xhr.responseText);
+						var jsonStr = xhr.responseText;
+						var jsonObj = JSON.parse(jsonStr);
+						console.log(jsonObj);
+
+					}
+				};
+				
+				console.log(xhr.responseText);
+
+			}
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$.getScript('06.js',function(){
+				console.log('aa')
+			})
+			
+			$(function(){
+				$('.submit').click(function(){
+					
+					//xxx.com?username=aaaa&password=1212
+					
+					console.log($('input:not(:last)').serialize())
+					
+					console.log($('input:not(:last)').serializeArray())
+				})
+				
+			})
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<form action="" method="post">
+			
+			<input type="text" name='username'/>
+			<input type="text" name='password'/>
+			
+			
+			<input type="button" value="提交" class="submit"/>
+		</form>
+		
+		
+	</body>
+</html>

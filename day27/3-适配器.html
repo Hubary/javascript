@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function Phone(){
+				this.phoneCall = function(){}
+				this.playGame = function(){}
+			}
+			
+			function Pad(){
+				this.playGame = function(){}
+			}
+			
+			
+			
+			function test(product){
+				product.phoneCall();
+				product.playGame();
+			}
+			
+			
+			
+			var p = new Phone();
+			
+			test(p);
+			
+			
+			var pad = new Pad();
+			//test(pad);
+			
+			
+			
+			function Adapter(p){
+				this.phoneCall = function(){
+					if(p.phoneCall){
+						p.phoneCall();
+					}else{
+						console.log(p.toString()+'不支持 打电话')
+					}
+				}
+				this.playGame= function(){
+					if(p.playGame){
+						p.playGame();
+					}
+				}
+				
+			}
+			
+			test(new Adapter(pad));
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

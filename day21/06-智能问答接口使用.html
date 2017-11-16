@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">		
+			var url = 'http://jisuznwd.market.alicloudapi.com/iqa/query?question=天气';
+			var xhr = new XMLHttpRequest();		
+			xhr.open('GET', url, true);	
+			//请求Header中添加的Authorization字段；
+//配置Authorization字段的值为“APPCODE ＋ 半角空格 ＋APPCODE值”。	
+			xhr.setRequestHeader('Authorization','APPCODE b56ceeed6e2449fc8985d4fe85769899')		
+			xhr.send(null);
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState == 4 && xhr.status == 200) {
+					var jsonStr = xhr.responseText;
+					var jsonObj = JSON.parse(jsonStr);
+					console.log(jsonObj)
+				}
+			}
+
+			
+		</script>
+	</head>
+
+	<body>
+
+		<ul id="list">
+
+		</ul>
+
+	</body>
+
+</html>

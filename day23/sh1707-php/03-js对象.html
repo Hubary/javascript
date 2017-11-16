@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			//构造函数创建
+			var obj = new Object();
+			
+			//字面量 创建
+			var obj1 = {};
+			
+			function Dog(name,age){
+				this.name = name;
+				this.age = age;
+				this.say = function(){
+					console.log(this.name);
+				}
+			}
+			
+			var dog1 = new Dog('旺财',1);
+			
+			var dog2 = new Dog('小强',1);
+			console.log(dog1)
+			
+			
+			//es6   类     对象是类的实例
+			
+			//定义类
+			class Person{
+				//类的构造函数
+				constructor(name){
+					console.log(name);
+					this.name = name;
+				}
+				
+				//类中的方法，注意不需要 function
+				say(){
+					console.log(this.name);
+				}
+				eat(){
+					
+				}
+				
+			}
+			var xiaoming = new Person('张三');
+			console.log(xiaoming);
+			xiaoming.say();
+			
+			//用extends  关键字 继承 
+			class YellowPerson extends Person {
+				//如果子类实现 构造函数，必须调用 父类的构造函数 super
+				constructor(name){
+					super(name);//super  就是父类的构造函数
+					
+					this.color = 'yellow';
+				}
+				pingpang(){
+					console.log('aaaaa')
+				}
+			}
+			
+			//子类 拥有 父类的属性和方法
+			var wangwu = new YellowPerson('王五');
+			console.log(wangwu.name);
+			wangwu.say();
+			console.log(wangwu.color);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

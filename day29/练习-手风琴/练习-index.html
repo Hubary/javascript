@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>手风琴</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			#box {
+				margin: 100px auto 0;
+				width: 1400px;
+				display: flex;
+				justify-content: center;
+				height: 260px;
+			}
+			
+			#box li {
+				width: 200px;
+				height: 260px;
+			}
+			
+			#box li a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				color: #fff;
+				background: rgba(0, 0, 0, .3);
+			}
+			
+			#box li a span {
+				display: block;
+				margin: 0 auto;
+				padding-top: 40px;
+				width: 24px;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#box li').hover(function() {
+					$(this).children('a').hide().end().stop().animate({
+						width: 350
+					}).siblings().stop().animate({
+						width: 175
+					})
+				},
+
+				function() {
+					$(this).children('a').show();
+					$('#box li').stop().animate({
+						width: 200
+					})
+				});
+		})
+	</script>
+
+	<body>
+		<ul id="box">
+			<li style="background: url(images/1.jpg) center no-repeat">
+				<a href="http://101.132.182.223"><span>温泉酒店</span></a>
+			</li>
+			<li style="background: url(images/2.jpg) center no-repeat">
+				<a href="javascript:;"><span>情侣酒店</span></a>
+			</li>
+			<li style="background: url(images/3.jpg) center no-repeat">
+				<a href="javascript:;"><span>设计酒店</span></a>
+			</li>
+			<li style="background: url(images/4.jpg) center no-repeat">
+				<a href="javascript:;"><span>青年旅社</span></a>
+			</li>
+			<li style="background: url(images/5.jpg) center no-repeat">
+				<a href="javascript:;"><span>特色客栈</span></a>
+			</li>
+			<li style="background: url(images/6.jpg) center no-repeat">
+				<a href="javascript:;"><span>海岛酒店</span></a>
+			</li>
+			<li style="background: url(images/4.jpg) center no-repeat">
+				<a href="javascript:;"><span>青年旅社</span></a>
+			</li>
+		</ul>
+
+	</body>
+
+</html>

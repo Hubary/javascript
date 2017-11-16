@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="09-.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			jQuery.noConflict();//jq 不用$对象了
+			console.log($)
+			console.log(jQuery);
+			
+			
+			(function($){
+				
+				console.log($,'立即执行函数内部');
+			})(jQuery);
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

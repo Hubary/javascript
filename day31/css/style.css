@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.a-item {
+  color: red; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/*!
+ hello world 你好
+ hello world
+ hello world
+  */
+.box-top {
+  color: red;
+  border-top: 1px solid #ccc;
+  font-size: 13px; }
+
+.item {
+  font-size: 13px; }
+
+#box {
+  width: 100px; }
+  #box p {
+    font-size: 13px;
+    color: red; }
+    #box p span {
+      color: gray; }
+  #box .item {
+    width: 100px;
+    height: 200px; }
+
+.bottom {
+  font-size: 13px; }
+
+/*# sourceMappingURL=style.css.map */

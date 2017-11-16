@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.banner {
+				width: 600px;
+				height: 350px;
+				position: relative;
+				margin: 30px auto;
+				overflow: hidden;
+			}
+			
+			.list {
+				position: relative;
+				width: 5000px;
+			}
+			
+			.list>li {
+				float: left;
+			}
+			
+			.list>li img {
+				width: 600px;
+				height: 350px;
+			}
+			
+			.circle {
+				position: absolute;
+				left: 37%;
+				bottom: 0;
+				z-index: 10;
+				height: 15px;
+			}
+			
+			.circle>a {
+				float: left;
+				margin: 0 10px;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background: #ccc;
+			}
+			
+			.circle>.active {
+				background: red;
+			}
+			
+			.direction>a {
+				display: block;
+				width: 80px;
+				height: 40px;
+				font-size: 20px;
+				background: rgba(0, 0, 0, .6);
+				text-align: center;
+				line-height: 40px;
+				color: #ffffff;
+				text-decoration: none;
+				position: absolute;
+				top: 50%;
+			}
+			
+			.direction>a:nth-child(2) {
+				right: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="banner banner1">
+			<ul class="list">
+				<li><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+				<li><img src="images/5.jpg"></li>
+			</ul>
+			<div class="circle">
+				<a href="##" class="active"></a>
+				<a href="##"></a>
+				<a href="##"></a>
+				<a href="##"></a>
+				<a href="##"></a>
+			</div>
+			<div class="direction">
+				<a href="##">
+					<</a>
+						<a href="##">></a>
+			</div>
+		</div>
+		
+		
+		
+		<div class="banner banner2">
+			<ul class="list">
+				<!--<li><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+				<li><img src="images/5.jpg"></li>-->
+			</ul>
+			<div class="circle">
+				<!--<a href="##" class="active"></a>
+				<a href="##"></a>
+				<a href="##"></a>
+				<a href="##"></a>
+				<a href="##"></a>-->
+			</div>
+			<div class="direction">
+				<a href="##">
+					<</a>
+						<a href="##">></a>
+			</div>
+		</div>
+		
+	</body>
+
+</html>
+
+<script src="pool.js"></script>
+<!--<script src="lunbo.js" type="text/javascript" charset="utf-8"></script>
+-->
+<!--<script src="lunbo1.js" type="text/javascript" charset="utf-8"></script>
+-->
+<script src="lunbo2.js" type="text/javascript" charset="utf-8"></script>
+<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	
+	ajax({
+		url:'lunbo.json',
+		success:function(res){
+			console.log(res);
+			var arr =  res.data.map(function(obj){
+				
+				return `<li><img src="${obj.imgUrl}"></li>`;
+				
+			});
+			
+			var list = document.querySelector('.banner2 .list')
+			list.innerHTML = arr.join('');
+			
+			
+			var arr2 =  res.data.map(function(obj,index){
+				if(index == 0){
+					return '<a href="##" class="active"></a>'
+				}
+				return '<a href="##"></a>';
+			});
+			
+			var circle = document.querySelector('.banner2 .circle')
+			circle.innerHTML = arr2.join('');
+			new Lunbo('banner2');
+			
+			
+			
+			
+		}
+	})
+	
+	
+	
+
+//	new Lunbo('banner2');
+	new Lunbo('banner1');
+</script>

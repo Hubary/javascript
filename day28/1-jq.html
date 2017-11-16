@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	
+		<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+	
+		
+	
+	</head>
+	<body>
+		
+		<div id="box" class="asdf"></div>
+		
+		<div id="">
+			
+		</div>
+		
+		
+		<div class="nav"></div>
+		<div class="nav"></div>
+		
+		<input type="text" name="" id="" value=""  disabled=""  class="ipt"/>
+		
+	</body>
+	<script type="text/javascript">
+			
+			console.log($);
+			console.log(jQuery);
+			
+			console.log($ == jQuery);
+			
+			//选中元素 都是伪数组
+			console.log($('#box'));
+			console.log($('div'))
+			
+			
+			
+			window.onload = function(){
+				console.log('原生的页面加载完毕')
+			}
+			
+			$(function(){
+				console.log('页码加载完毕');
+				
+				//$('#box').innerHTML = 'aaa';
+				var div =  $('#box')[0]
+				console.log(div);
+				div.innerHTML = 'aaaa';
+				
+				
+				
+				console.log($('#box').attr('class'))
+				$('#box').attr('class','item');
+				
+				$('#box').removeAttr('class');
+				
+				
+				
+				//attr  帮咱们做了 遍历 ，所有选中的元素 都会被设置 
+				$('.nav').attr('myid','test');
+			
+				//获取属性的时候 ，虽然选中了多个nav，但是只返回第一个
+				console.log($('.nav').attr('myid'),111);
+			
+				$('.nav').attr('item',function(index){
+					console.log(index);
+					
+					if(index == 0){
+						return 'nihao0'
+					}else{
+						return 'nihao1'
+					}
+					
+					//return 'nihao';
+				});
+				
+				
+				$('.nav').removeAttr('item');
+				
+				
+				
+				$('.nav').prop('my','my')//在标签里看不到
+				console.log($('.nav').prop('my'))
+				
+				
+				
+				
+				console.log($('.ipt').attr('disabled'));
+				
+				console.log($('.ipt').prop('disabled'))
+				
+				
+				$('.nav').addClass('box');
+				$('.nav').removeClass('box')
+				
+				
+				$('.nav').addClass('box').addClass('asdsd').removeClass('box');
+				
+				
+				
+				$('.nav').toggleClass('box').toggleClass('box');
+				
+				
+				$('#box').html('<h1>你好</h1>');
+				
+				$('.nav').html('hah ');
+				
+				$('.ipt').val('你好');
+				
+				$('#box').text('<h1>你好</h1>');
+				
+				$('#box').css({
+					width:'200',
+					background:"red",
+					height:100
+				});
+				
+			})
+			
+			
+		</script>
+</html>

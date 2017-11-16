@@ -1,0 +1,70 @@
+
+@import 'a.scss';
+*{
+    margin: 0;
+    padding: 0;
+}
+//hello world 好的
+/*!
+ hello world 你好
+ hello world
+ hello world
+  */
+
+//$fontSize:13px;
+$boardDir :top !default;
+
+.box-#{$boardDir}{
+    
+    color: red;
+    border-#{$boardDir}:1px solid #ccc;
+    
+//  $fontSize :16px !global;
+    
+    
+    font-size: $fontSize;
+    
+}
+
+.item{
+    font-size: $fontSize;
+}
+
+
+
+
+#box{
+    width: 100px;
+    
+    p{
+       
+       font-size: $fontSize; 
+       color: red;
+       span{
+           color: gray;
+       }
+       
+    }
+    
+    
+    .item{
+        width: 100px;
+        height: 200px;
+    }
+}
+
+
+
+
+.bottom{
+    font-size: $fontSize;
+}
+
+
+
+
+
+
+
+
+

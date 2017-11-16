@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				console.log($('#box').offset().left);
+				
+				
+				console.log($('#box2').position());
+				
+				console.log($('#box2').height());
+				
+				
+				console.log($('.nav').eq(0));
+				console.log($('.nav:eq(0)'));
+				
+				$('.nav')
+				
+			})
+			
+			
+		</script>
+		
+		<style type="text/css">
+			#box{
+				width:200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				left: 100px;
+				top:100px
+			}
+			
+			
+			#box2{
+				width:50px;
+				height: 50px;
+				background: yellow;
+				position: absolute;
+				left: 10px;
+				top:10px
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			
+			<div id="box2"></div>
+			
+		</div>
+		
+		<div class="nav">123123123</div>
+		<div class="nav">asdfasdfasdf</div>
+		
+		
+	</body>
+</html>
