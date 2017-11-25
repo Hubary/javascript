@@ -95,14 +95,11 @@
 				<a href="##"></a>
 			</div>
 			<div class="direction">
-				<a href="##">
-					<</a>
-						<a href="##">></a>
+				<a href="##"><</a>
+				<a href="##">></a>
 			</div>
 		</div>
-		
-		
-		
+
 		<div class="banner banner2">
 			<ul class="list">
 				<!--<li><img src="images/1.jpg"></li>
@@ -124,7 +121,7 @@
 						<a href="##">></a>
 			</div>
 		</div>
-		
+
 	</body>
 
 </html>
@@ -137,41 +134,33 @@
 <script src="lunbo2.js" type="text/javascript" charset="utf-8"></script>
 <script src="ajax.js" type="text/javascript" charset="utf-8"></script>
 <script>
-	
 	ajax({
-		url:'lunbo.json',
-		success:function(res){
+		url: 'lunbo.json',
+		success: function(res) {
 			console.log(res);
-			var arr =  res.data.map(function(obj){
-				
+			var arr = res.data.map(function(obj) {
+
 				return `<li><img src="${obj.imgUrl}"></li>`;
-				
+
 			});
-			
+
 			var list = document.querySelector('.banner2 .list')
 			list.innerHTML = arr.join('');
-			
-			
-			var arr2 =  res.data.map(function(obj,index){
-				if(index == 0){
+
+			var arr2 = res.data.map(function(obj, index) {
+				if(index == 0) {
 					return '<a href="##" class="active"></a>'
 				}
 				return '<a href="##"></a>';
 			});
-			
+
 			var circle = document.querySelector('.banner2 .circle')
 			circle.innerHTML = arr2.join('');
 			new Lunbo('banner2');
-			
-			
-			
-			
+
 		}
 	})
-	
-	
-	
 
-//	new Lunbo('banner2');
+	//	new Lunbo('banner2');
 	new Lunbo('banner1');
 </script>

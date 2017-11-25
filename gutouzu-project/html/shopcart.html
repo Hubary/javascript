@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/shopcart.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div class="top clear">
+			<div class="margin">
+				<a href="##" class="all-shops">所有在售商品</a>
+				<div id="" class="top-right">
+					<p>
+						<a href="" target="_blank">欢迎</a>
+						<span>|</span>
+						<a href="index.html" target="_blank">退出</a>
+					</p>
+					<a href="##" class="shopping">购物车（0）</a>
+				</div>
+			</div>	
+		</div>	
+		
+		<div class="margin">
+			<div class="head">
+			
+			<a href="index.html" class="logo"><img src="../images/header-logo.jpg"/></a>
+			<ul class="step-cont clear">
+				<li class="step1">1.查看购物车</li>
+				<li class="step2">2.填写核对订单信息</li>
+				<li class="step3">3.提交订单成功</li>
+			</ul>
+		</div>
+		<h3 class="myCart">我的购物车</h3>
+		<div class="product-page">
+			<div class="page-title">
+				<p class="all_btn"><input type="checkbox" class="check" />
+				<i>全选</i>
+				</p>
+				<p class="product-title">商品</p>
+				<p class="price-title">单价(元)</p>
+				<p class="num-title">数量</p>
+				<p class="sum-title">小计(元)</p>
+				<p class="del-title">操作</p>
+			</div>
+			<div class="page-list">
+				<div class="me-peoduct">
+					<input type="checkbox" class="check2"/>
+					<i>自营商品</i>
+				</div>
+				<ul class="cart-list">		
+					<li class="cart-tbody">
+						<input type="checkbox" class="check" />
+				        <div class="detail-title">
+				        	<img src="../images/4-small.jpg" class="productimg">
+				        	<p class="title">贝梵诗丅恤短袖T恤</p>
+				        </div>
+				        <div class="color-size">
+				        	<p><span>颜色分类：</span><i class="color">粉红色</i></p>
+				        </div>
+				        <p  class="price">20.00</p>
+				        <div class="number">
+					        <button class="minus">-</button>
+					        <input type="text" value="1" class="txt">
+					        <button class="add">+</button>
+				        </div>
+				        <p class="sum"><span>￥</span><b class="sum-price">20.00</b></p>
+				        <a href="##" class="del">删除</a>
+					</li>
+				</ul>
+			</div>
+		
+		</div>
+
+		<!--margin结束-->
+		</div>
+		
+		
+		<div class="foot">
+			
+		</div>
+		
+	</body>
+</html>
+<script src="../lib/require.js" data-main = "../js/shopcart.js" type="text/javascript" charset="utf-8"></script>
+<script src="../lib/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$('.foot').load('footer-public.html');
+</script>

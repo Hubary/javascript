@@ -1,0 +1,34 @@
+{
+	"data":
+	[
+		{
+	"imgUrl":"https://img.1000.com/qm-a-img/prod/1308513/7ce9b2403b8287cdcc84e83f3520b415.jpg@.webp",
+	"href":"",
+	"productZone":"猫咪专区",
+	"zone1":"猫咪日用品",
+	"zone2":"出行装备",
+	"zone3":"自由犬",
+	"zone4":"自由犬宠物手提网包小号 蓝底星点",
+	"title":"猫食三文鱼肉条",
+	"price":"10元",
+	"commentsNum":12,
+	"delprice":"50元",
+	"pid":"2",
+	"goodsID":"2",
+	"imgsArr":[
+		"http://img.1000.com/qm-a-img/prod/1308513/83f20dd36c18b7b1d6fb9634babfdd46.jpg"
+		,"http://img.1000.com/qm-a-img/prod/1308513/9fd8465ada82fcac00685aef19f278da.jpg"
+		,"http://img.1000.com/qm-a-img/prod/1308513/2136a02abf687956b969999b4162cee2.jpg"
+		,"http://img.1000.com/qm-a-img/prod/1308513/1e39bf7d1b0b9a62cc8cfcfebbe456d7.jpg"
+	],
+
+	"colors":[
+		{"imgUrl":"","des":"原味"},{"imgUrl":"","des":"加牛磺酸"}
+		,{"imgUrl":"","des":"加海带汁"},{"imgUrl":"","des":"混拿"}
+		
+	]
+			
+}
+	]
+}
+

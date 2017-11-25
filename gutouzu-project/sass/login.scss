@@ -1,0 +1,30 @@
+.margin{width:1200px;margin: 0 auto;}
+.head{height: 100px;padding:20px;box-sizing: border-box;}
+.head a{float:left;display: block;border-right: 1px solid #C8C8C8;}
+.head img{display: block;margin-right: 20px;}
+.head .wellogin{float: left;font:25px/60px "";margin-left: 20px;color: #666;}
+
+
+.banner{height:580px;background: url(../images/banner-login.jpg) center no-repeat;
+  background-size: auto 100%;position: relative;left:0px;}
+
+
+.login-box{width: 350px;border: 5px solid rgba(255,255,255,.4);margin-top: 54px;margin-bottom: 54px;
+border-radius: 3px;position: absolute;top:130px;right:180px;}
+.login-content{padding:25px 27px;background: #fff;}
+.login-content .msg-title{border-radius: 4px;color: rgba(0,0,0,.65);font:12px/16px "";
+padding: 8px 16px;margin-bottom: 16px;border: 1px solid #fcdbd9;background-color: #fef0ef;}
+.login-content .msg-title a{color:#0073e6}
+.login-content .free-reg{text-align: right;color: #C40001;}
+.login-content .free-reg>a{color: #C40001;}
+
+.input-msg{padding:20px 0 0 0;position: relative;}
+.input-msg input{width: 100%;margin-bottom: 20px;height: 36px;border: 1px solid #d3d3d3;
+border-radius: 3px;line-height: 36px;text-indent: 45px;}
+.input-msg .photo-phone{position: absolute;left:8px;top:30px;}   
+.input-msg .photo-lock{position: absolute;left:8px;top:85px;}   
+.code-cookie{font:12px/24px "";margin-bottom: 10px;}
+.code-cookie p{float: left;}
+.code-cookie a{float: right;}
+.login{display:block;width:100%;background: #C40001;color:#fff;
+font:700 16px/36px "";border-radius: 3px;margin:40px 0 10px 0;text-align: center;}

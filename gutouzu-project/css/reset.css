@@ -1,0 +1,49 @@
+.margin { width: 1200px; box-sizing: border-box; margin: 0 auto; }
+
+.header { width: 100%; display: flex; justify-content: space-between; padding: 20px 30px 0px; box-sizing: border-box; }
+
+.header .a { display: block; text-align: center; }
+
+.header .header-right { font: 14px/80px ""; color: #333; height: auto; }
+
+.header .header-right a { color: #096cc8; }
+
+.WelcomeReset { margin: 0 auto; text-align: center; margin: 20px 0 90px 0; border-top: 1px solid #C40001; }
+
+.WelcomeReset .welTitle { font: 700 30px/100px ""; color: #C40001; }
+
+.regmasage { margin: 0 auto; }
+
+.regmasage .allTitle { float: left; margin-left: 400px; }
+
+.regmasage .allTitle p { font: 14px/60px ""; }
+
+.regmasage .allmsg { float: left; position: relative; }
+
+.regmasage .allmsg input { display: block; margin-top: 15px; height: 38px; text-indent: 5px; font: 14px/36px ""; border-radius: 3px; width: 266px; border: 1px solid #ccc; }
+
+.regmasage .allmsg input:nth-child(3) { width: 160px; }
+
+.regmasage .allmsg input:nth-child(6) { width: 160px; }
+
+.regmasage .allmsg .authcode { font: 16px/36px ""; width: 95px; position: absolute; top: 55px; text-align: match-parent; color: #fff; left: 172px; border: 1px solid #ccc; border-radius: 3px; background: url(../images/autocode2.jpg) no-repeat; }
+
+.regmasage .allmsg .gain { font: 700 12px/36px ""; width: 95px; position: absolute; top: 125px; left: 172px; border-radius: 3px; background: #C40001; color: #fff; border: 0; }
+
+.regmasage .allmsg .hide { font: 700 12px/36px ""; width: 352px; position: absolute; color: #333; left: 280px; border-radius: 3px; border: 1px solid #e0e080; display: none; }
+
+.regmasage .allmsg .calNum1 { top: 16px; }
+
+.regmasage .allmsg .ImgVCode1 { top: 70px; }
+
+.regmasage .allmsg .NumCode1 { top: 125px; }
+
+.regmasage .allmsg .pwdNum1 { top: 180px; }
+
+.regmasage .allmsg p { font: 12px/30px ""; }
+
+.regmasage .allmsg .label { font: 14px/60px ""; }
+
+.regmasage .allmsg .label a { color: #096cc8; }
+
+.regmasage .allmsg .register { display: block; width: 266px; background: #C40001; color: #fff; font: 700 16px/36px ""; border-radius: 3px; }

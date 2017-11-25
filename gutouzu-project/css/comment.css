@@ -1,0 +1,21 @@
+.margin { width: 1200px; margin: 0 auto; }
+
+.comment_box { background: #fff; }
+.comment_box .menulist { text-align: center; background: #ccc; cursor: pointer; }
+.comment_box .menulist .menu-btn { float: left; font: 12px/30px ""; border: 1px solid #ccc; width: 80px; background: #eee; }
+.comment_box .menulist .active { background: #fff; color: #C40001; }
+.comment_box .panel-box { width: 1000px; height: auto; overflow: hidden; }
+.comment_box .panel-box .panel { width: 1000px; height: auto; background: #fff; display: none; }
+.comment_box .panel-box .active { display: block; }
+
+#list > li { list-style: none; width: 1000px; display: flex; justify-content: space-around; margin-top: 30px; }
+
+#list > li .left { float: left; width: 200px; font: 12px/24px ""; color: #333; }
+
+#list > li .left > img { border-radius: 50%; width: 50px; height: 50px; }
+
+#list > li .left > span { font: 14px/60px ""; color: #333; text-align: center; }
+
+#list > li .right { float: left; width: 800px; font: 12px/24px ""; color: #333; }
+
+.star { width: 79px; height: 14px; background: url(../images/star.png) no-repeat; margin: 10px 0; }
