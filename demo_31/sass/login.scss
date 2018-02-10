@@ -1,0 +1,84 @@
+@import 'reset.css';
+@import 'a.scss';
+
+
+.nav{
+    width: 200px;
+    font-size: $fontSize;
+}
+
+
+.fake{
+    border: {
+        style:solid;
+        left:{
+            width:1px;
+            color:red;
+        }
+    };
+    
+    color:red;
+    .c1{
+        color: yellow;
+    }
+    
+    @at-root {
+        .c2{
+            color: red;
+        }
+    }
+    
+}
+
+
+@for $i from 1 through 3{
+    .item-#{$i}{
+        width: 2em*$i;
+    }
+}
+
+@mixin op($opc:50){
+    opacity: $opc/100;
+    
+    color: red;
+}
+
+.itme1{
+    @include op;
+}
+.item2{
+    @include op(80);
+}
+
+@mixin rounded($vert, $horz, $radius: 10px) {
+　　　　border-#{$vert}-#{$horz}-radius: $radius;
+　　　　-moz-border-radius-#{$vert}#{$horz}: $radius;
+　　　　-webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+#navbar li { @include rounded(top, left); }
+#footer { @include rounded(top, left, 5px); }
+
+%ir{
+    color: red;
+}
+
+.box{
+    @extend %ir;   
+    width: 100px;
+}
+
+.base{
+    color: white;
+}
+
+
+.son{
+    @extend .base;
+    width: 100px;
+}
+
+
+
+
+
+

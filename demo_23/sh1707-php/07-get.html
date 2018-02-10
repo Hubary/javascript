@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			ajax({
+				url:'07-get-post.php?username=admin&password=123456',
+				success:function(res){
+					console.log(res)
+					console.log(JSON.parse(res));
+					
+					var obj =  JSON.parse(res);
+					if(obj.code == 1){
+						//跳转到首页
+						location.href = '07-index.html';
+					}else{
+						//失败
+						alert(obj.msg)
+					}
+					
+				}
+			})
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

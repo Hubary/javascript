@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				console.log('页面加载完毕')
+			})
+			$(function() {
+				console.log('页面加载完毕')
+			})
+			//此两种方法相同效果,而且不会覆盖
+
+			window.onload = function() {
+				console.log('window.onload')
+			}
+			//onload是window的属性,一个页面出现两次会被覆盖
+			$(function() {
+				//添加点击事件
+				$('#btn1').click(function() {
+					console.log("点击了1")
+				})
+
+				$('#btn2').click(function() {
+
+					$(this).after('<div class=div>hahhash</div>');
+					//之后添加div
+					$('.div').css({
+						background: 'red',
+						width: '100',
+						height: '100',
+						float: 'right'
+					})
+
+				})
+				//打印offset  left
+				console.log($('#odiv').offset().left);
+				console.log($('.odiv').eq(3))
+				//这两种方法选择的元素相同,只有细小差别
+				console.log($('.odiv:eq(3)'))
+				console.log($('.odiv').height())
+				console.log($('.odiv').position())
+			})
+		</script>
+	</head>
+
+	<body>
+		<button id="btn1">男</button>
+
+		<button id='btn2'>女</button>
+		<div id='odiv'>1</div>
+		<div class='odiv'>2</div>
+		<div class='odiv'>3</div>
+		<div class='odiv'>4</div>
+		<div class='odiv'>5</div>
+		<div class='odiv'>6</div>
+		<div class='odiv'>7</div>
+		<div class='odiv'>8</div>
+		<div class='odiv'>9</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			
+			$(document).ready(function(){
+				console.log('页面加载完毕1')
+			})
+			
+			$(function(){
+				console.log('页面加载完毕2')
+			})
+			$(function(){
+				console.log('页面加载完毕3')
+			})
+			$(function(){
+				console.log('页面加载完毕4')
+				
+				
+				// addEventListener
+				$('#box').click(function(){
+					console.log('点击了1')
+				});
+				$('#box').click(function(){
+					console.log('点击了2')
+				});
+				
+				$('#box').mouseover(function(){
+					console.log('over')
+				})
+				
+				
+//				$('.nav').on('click',function(){
+//					console.log('点击')
+//				})
+
+
+				function test(evt) {
+					console.log('点击',evt.data)
+				}
+
+				//事件委托
+				$('.nav').on('click','.item',{name:'张三'},test);
+				//$('.nav').off('click','.item',test);
+				
+				$('#box1').one('click',function(){
+					console.log(2222);
+				})
+				
+				
+				$('.nav').hover(function(){
+					console.log('移入')
+				},function(){
+					console.log('移出')
+				})
+				
+			})
+			
+			
+			var box = 1;
+			var box =2
+			
+			window.onload =function(){
+				console.log(1)
+				console.log(box);
+			}
+			window.onload =function(){
+				console.log(2)
+			}
+			
+			
+		</script>
+	<style type="text/css">
+		.nav{
+			width: 400px;
+			height: 400px;
+			background: yellow;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<button id="box">男</button>
+		<button id="box1">男</button>
+
+		
+		<div class="nav">
+			
+			<button class="item">按钮</button>
+			
+		</div>
+		
+	</body>
+</html>

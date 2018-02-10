@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			var url = 'https://api.readhub.me/topic?lastCursor=24398&pageSize=10'
+			
+			$.ajax({
+				type:"get",
+				url:url,
+				success:function(res){
+					console.log(res);
+				},
+				error:function(){
+					
+				},
+				beforeSend:function(){
+					console.log('beforeSend')
+				}
+			});
+			
+//			$.ajax({
+//				type:"post",
+//				data:{
+//					username:"sadfadf"
+//				}
+//				url:url,
+//				success:function(res){
+//					console.log(res);
+//				}
+//			});
+			var url1 = 'https://api.readhub.me/topic'
+			
+
+			$.get(url1,{lastCursor:24398,pageSize:10},function(res){
+				console.log(res);
+			});
+//			$.post(url,{},function(){})
+
+
+			$.getJSON(url1,{lastCursor:24398,pageSize:10},function(res){
+				console.log(res,2222);
+			})
+			
+			$.getJSON('data.json',function(res){
+				console.log(res,4444);
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

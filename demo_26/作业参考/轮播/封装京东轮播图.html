@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<style>
+			ul {}
+			
+			.item li {
+				list-style: none;
+				width: 590px;
+				height: 340px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.leftBtn {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			.rightBtn {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			
+			.mybox {
+				position: relative;
+				width: 590px;
+				height: 340px;
+			}
+				.box {
+				position: relative;
+				width: 590px;
+				height: 340px;
+			}
+			.page {
+				position: absolute;
+				bottom: 50px;
+				left: 200px;
+				height: 30px;
+				/*width: 300px;*/
+			}
+			
+			.page li {
+				float: left;
+				width: 30px;
+				height: 30px;
+				list-style: none;
+				background: red;
+				border-radius: 50%;
+				line-height: 30px;
+				text-align: center;
+			}
+		</style>
+
+		<script src="animate.js"></script>
+		<script src="jdlunbo.js">
+			
+		</script>
+		
+		<script>
+			window.onload = function() {
+				//			var rightBtn = document.getElementsByClassName('rightBtn')[0];
+
+//				jdlunbo('mybox');
+//				jdlunbo('box');
+
+				var url = 'https://f.3.cn/bi/focus_aggr/get?callback=jsonpCallbackFocus&pin=&uuid=1503886576047479701360&_=1504765885165'
+				
+				var sc = document.createElement('script');
+				sc.src = url;
+				document.body.appendChild(sc);
+				document.body.removeChild(sc);
+
+			}
+			
+			
+			function jsonpCallbackFocus(resObj){
+				console.log(resObj)
+				
+				
+				var box = document.querySelector('.mybox');
+				var itemUl = box.querySelector('.item');
+				var pageUl = box.querySelector('.page');
+				
+				var html = '';
+				
+				var pageHtml = '';
+				resObj.data.forEach(function(value){
+					
+					var obj = value[0];
+					html += `<li><img src="${obj.src}"></li>`;
+					
+					pageHtml +=`<li></li>`;
+				
+				})
+				itemUl.innerHTML = html;
+				pageUl.innerHTML = pageHtml;
+				
+				jdlunbo('mybox');
+				
+				
+				
+			}
+			
+
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="mybox">
+			<ul class="item">
+				<!--<li style="opacity: 1"><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+				<li><img src="images/5.jpg"></li>
+				<li><img src="images/5.jpg"></li>-->
+			</ul>
+
+			<button class="leftBtn">&lt;</button>
+			<button class="rightBtn">&gt;</button>
+
+			<ul class="page">
+				<!--<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>5</li>-->
+			</ul>
+
+		</div>
+
+
+
+
+
+	</body>
+
+</html>

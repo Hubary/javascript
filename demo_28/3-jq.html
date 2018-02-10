@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<style type="text/css">
+		.hilight{background: red;}
+	</style>
+
+	<body>
+
+		<p>hello</p>
+		<p id="se">斯蒂芬是否</p>
+
+		<ul>
+			<li><b>Click me!</b></li>
+			<li>You can also <b>Click me!</b></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		console.log($('p').not('#se'));
+
+		console.log($('p').not($('#se')[0]));
+
+		$(document).bind("click", function(e) {
+			$(e.target).closest("li").toggleClass("hilight");
+		});
+	</script>
+
+</html>

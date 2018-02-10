@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$('div').addClass(function(index) {
+
+					if(index == 0) {
+						return 'nav';
+					} else {
+						return 'item';
+					}
+				});
+
+				$('div').each(function(index, value) {
+					console.log(index, value);
+					if(index == 0) {
+						$(value).addClass('0000')
+					} else {
+						$(value).addClass(index + 'aaa');
+					}
+
+				})
+
+				console.log($('div').length)
+				console.log($('div').size())
+				console.log($('div')[0])
+				console.log($('div').get(0))
+
+				$('div').click(function() {
+
+					console.log($(this).index())
+				});
+				
+				
+				$('.nav').data('goodsid','123123123123');
+				console.log($('.nav').data('goodsid'))	;
+				
+				
+				
+				console.log($('.nav').attr('data-name'));
+				
+				console.log($('.nav').data('name'))
+	
+			})
+		</script>
+	</head>
+
+	<body>
+
+		<div data-name='zhangsan'>1</div>
+		<div>2</div>
+		<div>3</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var url = 'http://i360mall.com/miaosha/home?_=1509433266332';
+			
+			//No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+//			Origin 'http://127.0.0.1:8020' is therefore not allowed access
+			
+			//出现了上面的报错，说明 接口不支持 跨域访问
+			
+			ajax({
+				url:url,
+				success:function(res){
+					console.log(res);
+				}
+			});
+			ajax({
+				url:'360.json',
+				success:function(res){
+					console.log(res);
+				}
+			})
+			
+			
+			function jsonpCallback(res){
+				console.log('jsonpcallback',res);
+			}
+			
+			//src  属性  支持跨域
+			
+		</script>
+		
+		
+		<script src="a.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			
+			//同源 
+			//协议  域名  端口号  一样 才是同源
+			
+			//http 默认端口号 80
+			//http://www.lefeng.com/
+			//http://www.lefeng.com/api/index.html
+			
+			
+			//https 默认端口号 443
+			//https://www.baidu.com:443
+			
+			
+			// 响应头  里有这个字段 就可以 控制  跨域
+			//Access-Control-Allow-Origin:*
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

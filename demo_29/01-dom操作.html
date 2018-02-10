@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			
+			$(function(){
+				
+				var $div = $('<li>');
+				$div.html('你好');
+				console.log($div)
+				
+				$('#box').append($div);
+
+				$('#box').append('<li>你好搜索</li>');
+				
+				
+				
+				$('#box').prepend('<li>哈哈</li>');
+				
+				
+				$('#box').before('<h2>aasdfa</h2>')
+				$('#box').after('<h2>aasdfa</h2>')
+				
+				
+				
+				$('#box').wrap('<div>')
+				
+				
+				$('#box').unwrap();
+				
+				
+				
+				$('h2').wrapAll('<div>');
+				
+				
+				$('li').wrapInner('<a>');
+				
+				
+				$('h2').click(function(){
+					console.log(1)
+				})
+				
+				
+//				var $h2s = $('h2').remove();
+var $h2s = $('h2').detach();
+				
+				$('#box').after($h2s);
+				
+				//console.log($('h2').remove());
+				
+				
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<!--sd -->
+		<ul id="box"></ul>
+		
+		
+		
+		
+	</body>
+</html>

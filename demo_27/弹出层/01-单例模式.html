@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="msg.js"></script>
+    <link rel="stylesheet" href="msg.css" />
+    <script>
+
+
+        window.onload =function () {
+        	
+            document.onclick = function () {
+                var obj1 = new Singleton();
+                var obj2 = new Singleton();
+                console.log(obj1 == obj2);
+
+                obj1.show('你好asdfaf afd asdf ',function () {
+                    console.log('用户点击了确定，执行退出操作')
+                },function () {
+                    console.log('用户点击了取消，执行退出操作')
+
+                })
+
+            }
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript">
+			function Ajax(url, callback) {
+				
+				//
+				var xhr = new XMLHttpRequest();
+
+				this.getJSON = function(url, callback) {
+					xhr.open('get', url, true);
+					xhr.send(null);
+					xhr.onreadystatechange = function() {
+
+						if(xhr.readyState == 4) {
+							if(xhr.status == 200) {
+								callback(xhr.responseText);
+							}
+						}
+					}
+				}
+			}
+
+			//			Ajax('xx.com',function(){
+			//				
+			//			})
+			//			
+			var a = new Ajax();
+			a.getJSON('xx.com', function() {
+
+			})
+		</script>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			var num = 1;
+			
+			function box(){
+				var a = 1;
+				function func(){
+					console.log(a);
+				}
+				return func;
+			}
+			
+			
+//			console.log(a);
+
+			var b = box();
+			
+			setTimeout(function(){
+				b();
+			},5000);
+			
+//			b();
+
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

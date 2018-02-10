@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+		//观察者模式
+		
+		
+		function Wechat(){
+			
+			
+			var stack = [];//栈
+			
+			
+			function addListener(name,callback){
+				console.log(111);
+				
+				var obj = {};
+				obj[name] = callback;
+				
+				stack.push(obj)
+				console.log(stack.length,stack)
+				
+				
+			}
+			
+			function publish(name,content){
+				stack.forEach(function(obj){
+					console.log(obj);
+					if(obj[name]){
+						var func =  obj[name];
+						func(content);
+					}
+					
+					
+				})
+			}
+			
+			return {
+				addListener:addListener,
+				publish:publish
+			}
+			
+		}
+		
+		var w = new Wechat();
+		w.addListener('MacTalk',function(res){
+			console.log('mac talk 发布新文章',res);
+		});
+		w.addListener('咪蒙',function(res){
+			console.log('咪蒙 发布新文章',res);
+		});
+		
+		
+		//mac talk 发文章
+		w.publish('MacTalk','锤子今天发布新手机，终于可以去看发布会了');
+		
+	
+		setTimeout(function(){
+			w.publish('咪蒙','男人家暴怎么办？');
+		},3000)
+		
+		//addLstener
+		
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			
+			function Dog(){
+				
+			}
+			
+			
+			var dog1  = new Dog();
+			var dog2 = new Dog();
+			
+			console.log(dog1 == dog2);
+			
+			
+			function Singleton(){
+				if(!Singleton.instance){
+					Singleton.instance = { name:"zhangsna",age:12};
+					console.log('创建对象')
+				}
+				
+				return Singleton.instance;
+			}
+			
+			var s1 = new Singleton();
+			var s2 = new Singleton();
+			var s3 = new Singleton();
+			
+			
+			console.log(s1 == s2)
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html >
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>飞机大战</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="lib/common.js"></script>
+
+	</head>
+
+	<body>
+		<div id="body_main" class="main">
+			<ul id="options" class="options">
+				<li value="1">超级困难</li>
+				<li value="2">非常困难</li>
+				<li value="3">比较困难</li>
+				<li value="4">简单</li>
+			</ul>
+		</div>
+
+	</body>
+
+	<script>
+		var optionsUl = document.getElementById('options');
+		var optionsLis = optionsUl.getElementsByTagName('li');
+		var body_main = document.getElementById('body_main');
+		
+
+		for(let i = 0; i < optionsLis.length; i++) {
+
+			//let i =0;{}
+			//let i =1{}
+			optionsLis[i].onclick = function() {
+				//console.log(i);
+
+				optionsUl.style.display = 'none';
+
+				//飞机出现
+				var myPlane = document.createElement('div');
+				myPlane.className = 'my-warplain';
+				document.body.appendChild(myPlane);
+
+				//飞机的初始位置
+				console.log(document.body.clientHeight)
+				var myPlaneY = document.body.clientHeight - myPlane.offsetHeight;
+				var myPlaneX = (document.body.clientWidth - myPlane.offsetWidth) / 2;
+				console.log(myPlaneY)
+				myPlane.style.top = myPlaneY + 'px';
+				myPlane.style.left = myPlaneX + 'px';
+
+				//飞机跟着鼠标移动
+				document.onmousemove = function(e) {
+					var evt = e || window.event;
+					console.log(e.clientX, e.pageX);
+
+					myPlane.style.top = e.clientY - myPlane.offsetHeight / 2 + 'px';
+					myPlane.style.left = e.clientX - myPlane.offsetWidth / 2 + 'px';
+
+				}
+
+				//飞机发射子弹
+
+				setInterval(function(){
+					sendBullet();
+				},300);
+
+				function sendBullet() {
+					var bullet = document.createElement('div');
+					bullet.className = 'bullet';
+					document.body.appendChild(bullet);
+
+					bullet.style.top = myPlane.offsetTop - bullet.offsetHeight + 'px';
+					bullet.style.left = myPlane.offsetLeft + myPlane.offsetWidth / 2 - bullet.offsetWidth / 2 + 'px';
+
+					setInterval(function() {
+
+						// i 控制游戏难度
+						bullet.style.top = bullet.offsetTop - 10 - i * 2 + "px";
+						//子弹超出屏幕 删除子弹
+						
+						if(bullet.offsetTop<=0){
+							bullet.remove();
+						}
+
+					}, 50)
+				}
+
+				
+				//敌机
+				setInterval(function(){
+					sendEnemy(0);
+				},300);
+				setInterval(function(){
+					sendEnemy(1);
+				},1300);
+				setInterval(function(){
+					sendEnemy(2);
+				},10300)
+				
+				function sendEnemy(num){
+					var className = '';
+					if(num == 0){
+						className = 'enemy-small'
+					}else if(num ==1){
+						className = 'enemy-middle'
+					}else if(num ==2){
+						className = 'enemy-large'
+					}
+					
+					var enemy = document.createElement('div');
+					enemy.className = className;
+					document.body.appendChild(enemy);
+					//敌机的初始位置
+					
+					// 
+					var leftS =  body_main.offsetLeft;
+					var ringhtS =  body_main.offsetLeft + body_main.offsetWidth - enemy.offsetWidth;
+					
+					var enemyX  = randomInt(leftS,ringhtS);
+					var enemyY = -enemy.offsetHeight;
+					
+					
+					
+					enemy.style.left = enemyX +"px";
+					enemy.style.top = enemyY + 'px';
+					
+					setInterval(function(){
+						
+						enemy.style.top = enemy.offsetTop + 10+'px';
+						
+					},50)
+					
+					
+				}
+
+
+			}
+		}
+	</script>
+
+</html>

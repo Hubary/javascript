@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import url(reset.css);
+.a-item {
+  color: red; }
+
+.nav {
+  width: 200px;
+  font-size: 13px; }
+
+.fake {
+  border-style: solid;
+  border-left-width: 1px;
+  border-left-color: red;
+  color: red; }
+  .fake .c1 {
+    color: yellow; }
+  .c2 {
+    color: red; }
+
+.item-1 {
+  width: 2em; }
+
+.item-2 {
+  width: 4em; }
+
+.item-3 {
+  width: 6em; }
+
+.itme1 {
+  opacity: 0.5;
+  color: red; }
+
+.item2 {
+  opacity: 0.8;
+  color: red; }
+
+#navbar li {
+  　　　　border-top-left-radius: 10px;
+  　　　　-moz-border-radius-topleft: 10px;
+  　　　　-webkit-border-top-left-radius: 10px; }
+
+#footer {
+  　　　　border-top-left-radius: 5px;
+  　　　　-moz-border-radius-topleft: 5px;
+  　　　　-webkit-border-top-left-radius: 5px; }
+
+.box {
+  color: red; }
+
+.box {
+  width: 100px; }
+
+.base, .son {
+  color: white; }
+
+.son {
+  width: 100px; }
+
+/*# sourceMappingURL=login.css.map */

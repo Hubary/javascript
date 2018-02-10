@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function red() {
+				console.log('red    - ', new Date());
+			}
+
+			function green() {
+				console.log('green  - ', new Date());
+			}
+
+			function yellow() {
+				console.log('yellow - ', new Date());
+			}
+
+			//返回Promise对象的通用亮灯函数
+			function tic(timer, callback) {
+				return new Promise(function(resolve, reject) {
+					setTimeout(function() {
+						callback();
+						resolve();
+					}, timer)
+				})
+			}
+
+			var promise = new Promise(function(resolve, reject) {
+				resolve()
+			});
+
+			function loop() {
+				promise.then(function() {
+					return tic(3000, red);
+				}).then(function() {
+					return tic(2000, green);
+				}).then(function() {
+					return tic(1000, yellow);
+				}).then(function() {
+					loop();
+				})
+			}
+			loop();
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

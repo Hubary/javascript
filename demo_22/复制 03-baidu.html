@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input type="text" name="" id="" value="" class="ipt" />
+		<ul class="list">
+
+		</ul>
+	</body>
+
+	<script type="text/javascript">
+		var ipt = document.querySelector('.ipt');
+		ipt.oninput = function() {
+			console.log(this.value);
+			var sc = document.createElement('script');
+			var search = this.value;
+			var url = 'https://suggest.taobao.com/sug?code=utf-8&q='+search+'&_ksTS=1509450218512_5226&callback=callback&k=1&area=c2c&bucketid=12'
+
+			sc.src = url;
+			document.body.appendChild(sc);
+			document.body.removeChild(sc)
+			
+			
+		}
+		
+		function callback(res){
+				console.log(res);
+				//处理数据
+				
+		}
+	</script>
+
+</html>

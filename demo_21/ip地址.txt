@@ -1,0 +1,44 @@
+查看自己电脑的ip      ipconfig
+
+ipv4  纯数字    10.11.54.209     0-255-----256^4
+ipv6  数字 字母  fe80:0000:b9cc:16e9:6762:3fe9%4
+
+
+
+为什么会有两个版本的  ipv4 v6
+qq  v7.2.5.3305
+v7.2.5.3304
+
+https://www.bennythink.com/all-platform-scientific-internet-all-in-one.html
+
+
+www.facebook.com 
+www.google.com
+
+长城网络防火墙
+
+www.google.com（域名）-》ip地址
+把域名转为ip地址     DNS 解析
+
+
+
+
+
+许志翔   
+男
+18
+河南郑州（汝州）
+
+
+
+
+ajax- 原生js  （面向对象）  php-  jquery   项目构建         PC项目（1周左右）                          node.js  
+
+
+
+
+
+
+
+
+

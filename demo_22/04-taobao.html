@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ipt {
+				width: 650px;
+				height: 40px;
+				display: block;
+				font: 16px/24px "";
+			}
+			
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#list {
+				width: 650px;
+				position: relative;
+			}
+			
+			li {
+				list-style: none;
+				font: 16px/40px "微软雅黑";
+				border-bottom: 1px dashed #D1D3D6;
+			}
+			
+			#search {
+				width: 650px;
+				margin: 100px auto;
+			}
+			
+			.box {
+				background: #FFFFFF;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 300px;
+				display: none;
+				border: 1px solid #888888;
+				padding:20px;
+			}
+			
+			li.active:hover .box {
+				display: block;
+			}
+			li.active:hover{background: #ccc;}
+			a{display: inline-block;border: 1px solid #ccc;font:16px/40px "";text-decoration: none;color: #000;text-align: center;padding: 5px 15px;}
+			#list li a:hover{background:#F70;}
+		</style>
+	</head>
+
+	<body>
+		<div id="search">
+			<input type="text" name="" class="ipt" value="" />
+			<ul id="list">
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var ipt = document.querySelector('.ipt')
+	var list = document.getElementById('list');
+	ipt.oninput = function() {
+		//console.log(this.value);
+		var search = this.value;
+		var url = 'https://suggest.taobao.com/sug?code=utf-8&q=' + search + '&_ksTS=1509450218512_5226&callback=call&k=1&area=c2c&bucketid=12'
+		var sc = document.createElement('script');
+		sc.src = url;
+		document.body.appendChild(sc);
+		document.body.removeChild(sc);
+	}
+	function call(res) {
+		var list = document.getElementById('list');
+		console.log(res);
+		list.innerHTML = "";
+		for(var i = 0; i < res.result.length; i++) {
+			var arr = res.result.map(function(value) {
+				return `<li>${value[0]}</li>`
+			});
+			var html = arr.join('');
+			/*	var str = '';
+				str = '<li>'+res.result[i][0]+'</li>'
+				
+				//arr.push(res.result[i][0]);list.innerHTML  += str;
+			*/
+		}
+		
+		list.innerHTML = html;
+		
+		for(var i in res.result) {
+			var str2 = '';
+			for(var j in res.magic) {
+				if(i == res.magic[j].index - 1) {
+					var obox = document.createElement('div');
+					list.children[i].className = 'active';
+					list.children[i].appendChild(obox);
+					obox.className = 'box';
+					for(var k in res.magic[j].data) {
+						for(var n in res.magic[j].data[k]) {
+							str2 += `<a href="#">${res.magic[j].data[k][n].title}</a>`;	
+						}
+						str2 += `</br></br>`
+						obox.innerHTML = str2;
+					}					
+				}
+			}
+		}
+	}
+</script>
